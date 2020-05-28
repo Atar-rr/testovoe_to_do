@@ -1,0 +1,35 @@
+<?php require_once __DIR__ . '/../layouts/header.phtml' ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Новая задача:</h3>
+                <form action="#" method="POST">
+                    <div class="input-froup  mb-3">
+                        <label>*Имя:</label>
+                        <input type="text" class="form-control" required placeholder="Имя" name="task[name]"
+                               value="<?= $params['task']['name'] ?? '' ?>">
+                        <?php if (isset($params['error']['name'])): ?>
+                            <?= $params['error']['name'] ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="input-froupmb-3">
+                        <label>*Email:</label>
+                        <input type="email" class="form-control" required placeholder="Email"
+                               name="task[email] value="<?= $params['task']['email'] ?? '' ?>">
+                        <?php if (isset($params['error']['email'])): ?>
+                            <?= $params['error']['email'] ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="input-froup mb-3 ">
+                        <label>*Описание задачи:</label>
+                        <textarea name="task[note]" class="form-control" required placeholder="Описание"></textarea>
+                        <?php if (isset($params['error']['note'])): ?>
+                            <?= $params['error']['note'] ?>
+                        <?php endif; ?>
+                    </div>
+                    <button class="btn btn-info" type="submit" name="submit">Создать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php require_once __DIR__ . '/../layouts/footer.phtml' ?>

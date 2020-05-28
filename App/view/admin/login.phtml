@@ -1,0 +1,26 @@
+<?php require_once __DIR__ . '/../layouts/header.phtml' ?>
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-4 ">
+            <form action='#' method="POST">
+                <div class="input-froup mb-3">
+                    <label>*Логин:</label>
+                        <input type="text" class="form-control" required placeholder="Логин" name="admin[login]"
+                               value="<?= htmlspecialchars($params['admin']['login'] ?? '') ?>">
+                    <?php if (isset($params['error']['login'])): ?>
+                        <?= $params['error']['login'] ?>
+                    <?php endif; ?>
+                </div>
+                <div class="input-froup mb-3">
+                    <label>*Пароль:</label>
+                        <input type="password" class="form-control" required placeholder="Пароль" name="admin[password]">
+                    <?php if (isset($params['error']['password'])): ?>
+                        <?= $params['error']['password'] ?>
+                    <?php endif; ?>
+                </div>
+                <button class="btn btn-info" type="submit" name="submit">Log in</button>
+            </form>
+        </div>
+    </div>
+</div>
+<?php require_once __DIR__ . '/../layouts/footer.phtml' ?>

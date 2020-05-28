@@ -1,0 +1,22 @@
+{
+    "name": "segrey/testovoe_beejee",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Atar-rr",
+            "email": "sergius.didenko@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\core\\": "App/core",
+            "App\\controller\\": "App/controller",
+            "App\\lib\\": "App/lib",
+            "App\\model\\": "App/model"
+        }
+    },
+    "require": {
+      "ext-pdo": "*"
+    }
+}

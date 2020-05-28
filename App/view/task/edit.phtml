@@ -1,0 +1,30 @@
+<?php require_once __DIR__ . '/../layouts/header.phtml' ?>
+ <div class="container">
+     <div class="row">
+         <div class="col-12">
+             <form action="/task/update" method="POST">
+                 <input type="hidden" name="_METHOD" value="PATCH">
+                 <input type="hidden" name="task[id]" value="<?= $params['task']['id'] ?? '' ?>">
+                 <div>
+                     <h1>Редактировать задачу</h1>
+                     <div class="input-froup mb-3">
+                         <label>Имя</label>
+                         <input type="text" name="task[name]" readonly class="form-control" placeholder="Имя" value="<?= $params['task']['name'] ?? ''?>">
+                     </div>
+                     <div class="input-froup mb-3">
+                         <label>Email</label>
+                         <input type="email" class="form-control" placeholder="Email" name="task[email]" readonly
+                                value="<?= $params['task']['email'] ?? '' ?>">
+                     </div>
+                     <div class="input-froup mb-3" >
+                         <label>*Описание</label>
+                         <textarea name="task[note]"  required class="form-control" placeholder="Описание"
+                         ><?= $params['task']['note'] ?></textarea>
+                     </div>
+                     <button class="btn btn-info" type="submit" name="update">Обновить</button>
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+<?php require_once __DIR__ . '/../layouts/footer.phtml' ?>
